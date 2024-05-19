@@ -20,4 +20,10 @@ class Cart extends ChangeNotifier  {
   List<Item> get bassketitem {
     return _items ;
   }
+
+    void remove(Item item){
+    _items.remove(item);
+    _price -= item.price! ;
+    notifyListeners();
+  }
 }
