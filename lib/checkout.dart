@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-//import 'model/Item.dart';
+import 'model/Item.dart';
 import './model/Cart.dart';
 
 class Checkout extends StatefulWidget {
@@ -20,7 +20,9 @@ class _CheckoutState extends State<Checkout> {
         return Card(
           child: ListTile(
             title: Text('${Cart.bassketitem[i].name}'),
-            trailing: IconButton(icon: Icon(Icons.remove), onPressed: () {}),
+            trailing: IconButton(icon: Icon(Icons.remove), onPressed: () {
+              Cart.remove(Cart.bassketitem[i]);
+            }),
           ),
         );
       });
